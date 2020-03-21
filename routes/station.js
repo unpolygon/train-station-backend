@@ -46,8 +46,8 @@ router.get('/',(req,res) => {
 
 router.get('/reset',(req,res) => {
     //reset data
-    station = {...initStation};
-    train = {...initTrain};
+    station = initStation.map(a => ({...a}));
+    train = initTrain.map(a => ({...a}));
     res.json({station:station,train:train});
 });
 
